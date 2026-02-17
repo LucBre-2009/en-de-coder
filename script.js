@@ -6,6 +6,7 @@ const output = document.getElementById("output");
 const encodeBtn = document.getElementById("encodeBtn");
 const decodeBtn = document.getElementById("decodeBtn");
 const resetBtn = document.getElementById("resetBtn");
+const copyBtn = document.getElementById("copyBtn");
 
 encodeBtn.addEventListener("click", () => {
     output.innerText = encodeMessage(input.value);
@@ -20,7 +21,22 @@ resetBtn.addEventListener("click", () => {
     output.innerText = "";
 });
 
-// Encode-Funktion
+copyBtn.addEventListener("click", () => {
+    if (output.innerText) {
+        navigator.clipboard.writeText(output.innerText)
+            .then(() => {
+                // Button kurz schwarz färben
+                copyBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                }, 300); // 300ms nach dem Klick wieder zurück
+            })
+            .catch(err => alert("Fehler beim Kopieren: " + err));
+    } else {
+        alert("Kein Text zum Kopieren vorhanden!");
+    }
+});
+
 function encodeMessage(text) {
     text = text.toLowerCase();
     let result = "";
@@ -35,7 +51,6 @@ function encodeMessage(text) {
     return result;
 }
 
-// Decode-Funktion
 function decodeMessage(text) {
     text = text.toLowerCase();
     let result = "";
