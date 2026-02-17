@@ -1,45 +1,55 @@
 # EN-DE Coder
 
-**Beschreibung:**
-EN-DE Coder ist ein einfacher Encoder/Decoder für Nachrichten mit einer festen Buchstabenverschiebung von 3 (Caesar-Chiffre). Die Webversion läuft komplett clientseitig in HTML, CSS und JavaScript und kann direkt auf GitHub Pages gehostet werden. Sie unterstützt deutsche Umlaute (ä, ö, ü) und Leerzeichen.
+**Description:**
+EN-DE Coder is a simple encoder/decoder for messages with a fixed character shift of 3 (Caesar cipher). The web version runs entirely client-side in HTML, CSS, and JavaScript and can be hosted directly on GitHub Pages. It supports German umlauts (ä, ö, ü) and spaces.
+
 
 ---
 
-## Funktionen
+## Functions
 
-* Nachricht **verschlüsseln** (Encode)
-* Nachricht **entschlüsseln** (Decode)
-* **Neue Eingabe**: Löscht die Textbox und das Ergebnisfeld
-* **In Zwischenablage kopieren**: Ergebnis wird direkt kopiert
-* **Futuristischer, neutraler Hintergrund** mit heller Mitte für bessere Lesbarkeit
+* Encode message (Encode)
+* Decode message (Decode)
+
+* **New Input**: Clears the text box and the result field
+
+* **Copy to Clipboard**: Copys the result directly
+
+**Futuristic, neutral background** with a light center for better readability
 
 ---
 
-## Dateistruktur
+## File Structure
 
 ```
 en-de-coder/
-├─ index.html       # Hauptseite
-├─ style.css        # Styling der Seite
-├─ script.js        # JavaScript für Encoder/Decoder
-└─ background.png   # Hintergrundbild
+├─ index.html # Main page
+├─ style.css # Page styling
+├─ script.js # JavaScript for encoder/decoder
+└─ background.png # Background image
 ```
 
 ---
 
-## Installation / Nutzung
+## Installation / Usage
 
-1. Alle Dateien in ein GitHub Repository hochladen.
-2. GitHub Pages aktivieren (Branch `main` oder `gh-pages`) → die Seite ist online verfügbar.
-3. Im Browser öffnen, z. B.:
-   `https://lucbre-2009.github.io/en-de-coder/`
-4. Nachricht in das Textfeld eingeben → Encode/Decode klicken → Ergebnis erscheint.
-5. Optional: „Neue Eingabe“-Button klicken, um Text und Ergebnis zu löschen.
-6. Optional: „In Zwischenablage kopieren“-Button klicken, um den Ergebnistext zu kopieren.
+1. Upload all files to a GitHub repository.
+
+2. Activate GitHub Pages (branch `main` or `gh-pages`) → the page is available online.
+
+3. Open in a browser, e.g. B.:
+
+`https://lucbre-2009.github.io/en-de-coder/`
+
+4. Enter message in the text field → Click Encode/Decode → Result appears.
+
+5. Optional: Click the "New Input" button to delete the text and result.
+
+6. Optional: Click the "Copy to Clipboard" button to copy the result text.
 
 ---
 
-## Technologien
+## Technologies
 
 * HTML5
 * CSS3
@@ -47,24 +57,31 @@ en-de-coder/
 
 ---
 
-## Hintergrund
+## Background
 
-* Das Hintergrundbild ist dezent, modern und futuristisch gehalten, mit heller Mitte für optimale Lesbarkeit der Eingabe- und Ausgabe-Boxen.
-* Keine Serverkomponenten nötig → läuft vollständig im Browser.
+* The background image is subtle, modern, and futuristic, with a light center for optimal readability of the input and output boxes.
+
+* No server components required → runs entirely in the browser.
 
 ---
 
-## Anpassungen
+## Customizations
 
-* Alphabet und Verschiebung können in `script.js` geändert werden (`alphabet` und `shift`).
-* Styling und Farben können in `style.css` angepasst werden.
-* Hintergrundbild kann durch ein eigenes Bild ersetzt werden (`background.png`).
+* Alphabet and shift can be changed in `script.js` (`alphabet` and `shift`).
+
+* Styling and colors can be customized in `style.css`.
+
+* The background image can be replaced with a custom image (`background.png`).
+
 
 ---
 
 ## GitHub Pages
 
-1. Repository auf GitHub erstellen oder bestehendes verwenden.
-2. Dateien `index.html`, `style.css`, `script.js` und `background.png` hochladen.
-3. Unter Repository → Einstellungen → Pages → Branch auswählen (`main` oder `gh-pages`) → Speichern.
-4. Die Seite wird automatisch live unter `https://USERNAME.github.io/REPOSITORYNAME/` verfügbar.
+1. Create a repository on GitHub or use an existing one.
+
+2. Upload the files `index.html`, `style.css`, `script.js`, and `background.png`.
+
+3. Under Repository → Settings → Pages → Select Branch (`main` or `gh-pages`) → Save.
+
+4. The page will automatically go live at `https://USERNAME.github.io/REPOSITORYNAME/`.
