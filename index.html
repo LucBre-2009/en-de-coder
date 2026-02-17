@@ -1,27 +1,30 @@
-<!DOCTYPE html lang="de">
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title> Encoder und Decoder</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>EN-DE Coder</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    <h2>Nachricht Encoder und Decoder</h2>
+  <h2>Message Encoder and Decoder</h2>
 
-    <textarea id="input" rows="6" placeholder="Nachricht eingeben"></textarea>
-    <div class="buttons">
-        <button id="encodeBtn">Encode</button>
-        <button id="decodeBtn">Decode</button>
-    </div>
+  <textarea id="input" rows="6" placeholder="Nachricht eingeben"></textarea>
+  <div class="buttons">
+    <button id="encodeBtn">Encode</button>
+    <button id="decodeBtn">Decode</button>
+  </div>
 
-    <div class="reset-container">
-        <button id="resetBtn">Neue Eingabe</button>
-    </div>
+  <div class="reset-container">
+    <button id="resetBtn">Neue Eingabe</button>
+  </div>
 
-    <h3>Ergebnis:</h3>
-    <p id="output"></p>
+  <h3>Ergebnis:</h3>
+  <p id="output"></p>
+  <div class="copy-container">
+    <button id="copyBtn">In Zwischenablage kopieren</button>
+  </div>
 </div>
 
 <script src="script.js"></script>
