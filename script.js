@@ -25,11 +25,10 @@ copyBtn.addEventListener("click", () => {
     if (output.innerText) {
         navigator.clipboard.writeText(output.innerText)
             .then(() => {
-                // Button kurz schwarz färben
                 copyBtn.classList.add('copied');
                 setTimeout(() => {
                     copyBtn.classList.remove('copied');
-                }, 300); // 300ms nach dem Klick wieder zurück
+                }, 300);
             })
             .catch(err => alert("Fehler beim Kopieren: " + err));
     } else {
