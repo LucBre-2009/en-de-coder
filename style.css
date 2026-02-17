@@ -1,0 +1,68 @@
+/* Hintergrund fest, sticky, über gesamte Seite */
+body {
+    font-family: Arial, sans-serif;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover; /* passt Bild an Bildschirmgröße an */
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85); /* leicht transparent, damit Text gut lesbar bleibt */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.buttons {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.reset-container {
+    text-align: center;
+    margin: 15px 0;
+}
+
+button {
+    font-size: 16px;
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p#output {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 40px;
+    border: 1px solid #ccc;
+    white-space: pre-wrap;
+}
