@@ -1,8 +1,7 @@
-/* Hintergrund fest, sticky, über gesamte Seite */
 body {
     font-family: Arial, sans-serif;
     background: url('background.png') no-repeat center center fixed;
-    background-size: cover; /* passt Bild an Bildschirmgröße an */
+    background-size: cover;
     display: flex;
     justify-content: center;
     padding: 50px;
@@ -10,7 +9,7 @@ body {
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.85); /* leicht transparent, damit Text gut lesbar bleibt */
+    background: rgba(255, 255, 255, 0.85);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -32,14 +31,9 @@ textarea {
     resize: none;
 }
 
-.buttons {
+.buttons, .reset-container, .copy-container {
+    text-align: center;
     margin-top: 10px;
-    text-align: center;
-}
-
-.reset-container {
-    text-align: center;
-    margin: 15px 0;
 }
 
 button {
@@ -65,4 +59,10 @@ p#output {
     min-height: 40px;
     border: 1px solid #ccc;
     white-space: pre-wrap;
+}
+
+button.copied {
+    background-color: #000; /* Button wird kurz schwarz */
+    color: #fff;
+    transition: background 0.3s;
 }
