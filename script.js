@@ -1,4 +1,4 @@
-const alphabet = "abcdefghijklmnopqrstuvwxyzäöü ";
+const alphabet = "abcdefghijklmnopqrstuvwxyzäöü1234567890+"§€%&/()='#—ˋ´…@n:,.!?- ";
 const shift = 3;
 
 const input = document.getElementById("input");
@@ -63,3 +63,4 @@ function decodeMessage(text) {
     }
     return result;
 }
+
