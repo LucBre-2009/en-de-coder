@@ -2,10 +2,10 @@
    ALGORITHMEN & SCHLÜSSEL
    ========================= */
 const algorithms = {
-  "A": [1, 5, -2, -5, 5, -6, 6, 9, -9], // Algorithmus 1
-  "B": [3, -1, 4, -3, 2, -4, 1, 0, 5],  // Algorithmus 2
-  "C": [2, -3, 7, -2, 3, -5, 4, -1, 6], // Algorithmus 3
-  "D": [5, -2, 3, -4, 6, -1, 2, -3, 7]  // Algorithmus 4
+  "a": [1, 5, -2, -5, 5, -6, 6, 9, -9], // Algorithmus 1
+  "b": [3, -1, 4, -3, 2, -4, 1, 0, 5],  // Algorithmus 2
+  "c": [2, -3, 7, -2, 3, -5, 4, -1, 6], // Algorithmus 3
+  "d": [5, -2, 3, -4, 6, -1, 2, -3, 7]  // Algorithmus 4
 };
 
 const algoKeys = Object.keys(algorithms);
@@ -151,8 +151,8 @@ function chooseAlgorithm() {
 function encodeMessage(text) {
   if (!text) return "";
 
-  const algo = chooseAlgorithm();
-  const shifts = algorithms[algo];
+  const algoStart = chooseAlgorithm();
+  const shifts = algorithms[algoStart];
   let result = "";
 
   for (let i = 0; i < text.length; i++) {
@@ -161,8 +161,11 @@ function encodeMessage(text) {
     result += String.fromCharCode(code + shift);
   }
 
-  // erster und letzter Buchstabe als Kennung
-  result = algo + result + algo;
+  // Endbuchstabe leicht verschlüsseln, basiert auf algoStart
+  const randomShift = Math.floor(Math.random() * 5) + 1; // 1-5
+  const algoEnd = String.fromCharCode(algoStart.charCodeAt(0) + randomShift);
+
+  result = algoStart + result + algoEnd;
   return result;
 }
 
@@ -170,8 +173,8 @@ function encodeMessage(text) {
 function decodeMessage(text) {
   if (!text || text.length < 2) return "";
 
-  const algo = text[0];
-  const shifts = algorithms[algo];
+  const algoStart = text[0];
+  const shifts = algorithms[algoStart];
   let result = "";
 
   for (let i = 1; i < text.length - 1; i++) {
