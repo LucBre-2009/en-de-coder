@@ -9,27 +9,42 @@
 </head>
 <body>
 
-<div class="container">
-  <h2>Nachricht Encoder und Decoder</h2>
+<!-- Sprach Button -->
+<div class="language-selector">
+  <button id="languageBtn">🇩🇪 Deutsch</button>
 
-  <textarea id="input" rows="6" placeholder="Nachricht eingeben"></textarea>
+  <div id="languagePopup" class="language-popup hidden">
+    <div data-lang="de">🇩🇪 Deutsch</div>
+    <div data-lang="en">🇬🇧 English</div>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <h2 id="title">Nachricht Encoder und Decoder</h2>
+
+  <textarea id="input" rows="6"></textarea>
+
   <div class="buttons">
-    <button id="encodeBtn">Encode</button>
-    <button id="decodeBtn">Decode</button>
+    <button id="encodeBtn"></button>
+    <button id="decodeBtn"></button>
   </div>
 
   <div class="reset-container">
-    <button id="resetBtn">Neue Eingabe</button>
+    <button id="resetBtn"></button>
   </div>
 
-  <h3>Ergebnis:</h3>
+  <h3 id="resultLabel"></h3>
+
   <p id="output"></p>
+
   <div class="copy-container">
-    <button id="copyBtn">In Zwischenablage kopieren</button>
+    <button id="copyBtn"></button>
   </div>
+
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
