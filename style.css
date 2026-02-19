@@ -91,4 +91,64 @@ p#output {
         font-size: 14px;
     }
 }
+/* Sprach Auswahl */
+
+.language-selector {
+
+position: absolute;
+
+top: 15px;
+
+right: 15px;
+
+}
+
+.language-selector button {
+
+background: white;
+
+color: black;
+
+border: 1px solid #ccc;
+
+}
+
+.language-popup {
+
+position: absolute;
+
+right: 0;
+
+background: white;
+
+border: 1px solid #ccc;
+
+border-radius: 5px;
+
+overflow: hidden;
+
+margin-top: 5px;
+
+}
+
+.language-popup div {
+
+padding: 10px;
+
+cursor: pointer;
+
+}
+
+.language-popup div:hover {
+
+background: #eee;
+
+}
+
+.hidden {
+
+display: none;
+
+}
+
 
