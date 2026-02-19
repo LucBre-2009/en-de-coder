@@ -1,5 +1,18 @@
-const shift = 3;
+/* =========================
+   ALGORITHMEN & SCHLÜSSEL
+   ========================= */
+const algorithms = {
+  "A": [1, 5, -2, -5, 5, -6, 6, 9, -9], // Algorithmus 1
+  "B": [3, -1, 4, -3, 2, -4, 1, 0, 5],  // Algorithmus 2
+  "C": [2, -3, 7, -2, 3, -5, 4, -1, 6], // Algorithmus 3
+  "D": [5, -2, 3, -4, 6, -1, 2, -3, 7]  // Algorithmus 4
+};
 
+const algoKeys = Object.keys(algorithms);
+
+/* =========================
+   DOM ELEMENTE
+   ========================= */
 const input = document.getElementById("input");
 const output = document.getElementById("output");
 
@@ -14,7 +27,9 @@ const languagePopup = document.getElementById("languagePopup");
 const title = document.getElementById("title");
 const resultLabel = document.getElementById("resultLabel");
 
-/* SPRACHEN */
+/* =========================
+   SPRACHEN
+   ========================= */
 const translations = {
   de: {
     title: "Nachricht Encoder und Decoder",
@@ -42,6 +57,9 @@ const translations = {
   }
 };
 
+/* =========================
+   SPRACHEN SETZEN
+   ========================= */
 function getBrowserLanguage() {
   const saved = localStorage.getItem("lang");
   if (saved) return saved;
@@ -74,7 +92,9 @@ function setLanguage(lang) {
 
 setLanguage(currentLang);
 
-/* POPUP */
+/* =========================
+   SPRACHEN POPUP
+   ========================= */
 languageBtn.onclick = () => {
   languagePopup.classList.toggle("hidden");
 };
@@ -86,23 +106,22 @@ languagePopup.querySelectorAll("div").forEach(item => {
   };
 });
 
-/* ENCODE */
+/* =========================
+   BUTTONS
+   ========================= */
 encodeBtn.onclick = () => {
   output.innerText = encodeMessage(input.value);
 };
 
-/* DECODE */
 decodeBtn.onclick = () => {
   output.innerText = decodeMessage(input.value);
 };
 
-/* RESET */
 resetBtn.onclick = () => {
   input.value = "";
   output.innerText = "";
 };
 
-/* COPY */
 copyBtn.onclick = () => {
   const t = translations[currentLang];
   if (output.innerText) {
@@ -119,23 +138,47 @@ copyBtn.onclick = () => {
   }
 };
 
-/* ENCODE FUNCTION - unterstützt alle Zeichen */
+/* =========================
+   VERSCHLÜSSELUNG
+   ========================= */
+
+// Algorithmus zufällig wählen
+function chooseAlgorithm() {
+  return algoKeys[Math.floor(Math.random() * algoKeys.length)];
+}
+
+// ENCODE
 function encodeMessage(text) {
+  if (!text) return "";
+
+  const algo = chooseAlgorithm();
+  const shifts = algorithms[algo];
   let result = "";
-  for (let letter of text) {
-    let code = letter.charCodeAt(0);
+
+  for (let i = 0; i < text.length; i++) {
+    const code = text[i].charCodeAt(0);
+    const shift = shifts[i % shifts.length];
     result += String.fromCharCode(code + shift);
   }
+
+  // erster und letzter Buchstabe als Kennung
+  result = algo + result + algo;
   return result;
 }
 
-/* DECODE FUNCTION - unterstützt alle Zeichen */
+// DECODE
 function decodeMessage(text) {
+  if (!text || text.length < 2) return "";
+
+  const algo = text[0];
+  const shifts = algorithms[algo];
   let result = "";
-  for (let letter of text) {
-    let code = letter.charCodeAt(0);
+
+  for (let i = 1; i < text.length - 1; i++) {
+    const code = text[i].charCodeAt(0);
+    const shift = shifts[(i - 1) % shifts.length];
     result += String.fromCharCode(code - shift);
   }
+
   return result;
 }
-
